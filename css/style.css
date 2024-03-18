@@ -72,12 +72,21 @@ body {
 .st12{fill:#808080;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
 
 .boutons-container {
-    display: flex;
-    justify-content: start; /* Ajuste cette valeur pour modifier l'alignement si nécessaire */
+  display: flex;
+  justify-content: space-around; /* Répartit uniformément l'espace entre les boutons */
+  align-items: center; /* Centre les boutons verticalement */
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur les petits écrans */
+  padding: 20px;
+
 }
 
 .boutons-container button {
-    margin-right: 10px; /* Ajoute un peu d'espace entre les boutons */
+    margin-right: 40px; /* Ajoute un peu d'espace entre les boutons */
+}
+
+.buttons {
+  background-color: white;
+  stroke: black;
 }
 
 
