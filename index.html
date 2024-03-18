@@ -2446,8 +2446,9 @@
 
 <div class="boutons-container">
     <button id="startAnimation">Démarrer l'Animation</button>
-    <button id="changeColors">Changer les couleurs</button>
-    <button id="changeColor">Changer les couleur</button>
+    <button id="changeColors">BluePrint</button>
+    <button id="changeColor">Pencil Sketch</button>
+    <button id="changeColour">Night Mode</button>
 </div>
 <script>
 document.getElementById('startAnimation').addEventListener('click', function() {
@@ -2532,6 +2533,38 @@ document.getElementById('changeColors').addEventListener('click', function() {
 
 
     </script>
+
+<script>
+    document.getElementById('changeColour').addEventListener('click', function() {
+        // Définition des nouvelles couleurs
+        const newColors = {
+            '.st0': {fill: '#000000', stroke: '#FFFFFF'},
+            '.st1': {fill: '#000000', stroke: '#FFFFFF'},
+            '.st2': {stroke: '#FFFFFF'},
+            '.st3': {fill: '#000000', stroke: '#FFFFFF'},
+            '.st4': {stroke: '#FFFFFF'},
+            '.st5': {stroke: '#FFFFFF'},
+            '.st6': {fill: '#000000'},
+            '.st7': {fill: '#000000', stroke: '#FFFFFF'},
+            '.st10': {stroke: '#FFFFFF'},
+            '.st11': {stroke: '#FFFFFF'},
+            '.st12': {stroke: '#FFFFFF'},
+        };
+    
+        // Appliquer les nouvelles couleurs
+        Object.keys(newColors).forEach(className => {
+            document.querySelectorAll(className).forEach(element => {
+                const styles = newColors[className];
+                if (styles.fill) element.style.fill = styles.fill;
+                if (styles.stroke) element.style.stroke = styles.stroke;
+            });
+        });
+    
+        // Appliquer le fond noir à l'ensemble du SVG
+        document.querySelector('svg').style.backgroundColor = '#000000';
+    });
+    
+        </script>
     
 
 </body>
